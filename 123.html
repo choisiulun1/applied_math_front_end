@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bottom-0 Test</title>
+    <style>
+        body, html {
+            margin: 0;
+            height: 100%;
+        }
+        .container {
+            position: relative;
+            height: 100vh;
+            background: #f0f0f0;
+        }
+        .box {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: tomato;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="box">I should stick to the bottom</div>
+</div>
+</body>
+</html>
