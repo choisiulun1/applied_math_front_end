@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const FoodCard = ({
                       imageSrc,
                       name,
@@ -18,10 +20,12 @@ const FoodCard = ({
     return (
         <div className="flex items-center bg-white rounded-md shadow p-2 w-full">
             {/* Left: Image */}
-            <img
+            <Image
                 src={imageSrc}
                 alt={name}
-                className="w-8 h-8 object-contain shrink-0 flex-none"
+                width={32}
+                height={32}
+                className="object-contain shrink-0 flex-none"
             />
 
             {/* Middle: Info */}

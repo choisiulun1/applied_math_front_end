@@ -3,7 +3,8 @@ type Nutrient = {
     value: number;
 };
 
-type Food = {
+export type Food = {
+    food_name: string;
     nf_calories?: number;
     nf_total_fat?: number;
     nf_saturated_fat?: number;

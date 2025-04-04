@@ -3,6 +3,7 @@ import {useState, useEffect, useRef} from 'react';
 import SearchBar from './SearchBar';
 import NutritionLabel from './NutritionLabel';
 import Carousel from "@/app/components/Carousel";
+import Image from "next/image";
 
 export default function OverlayWrapper() {
     const [showOverlay, setShowOverlay] = useState(false);
@@ -89,11 +90,11 @@ export default function OverlayWrapper() {
                             <p>Loading...</p>
                         ) : (
                             <Carousel>
-                                {(foods.current as Array<{ food_name: string; [key: string]: any }>).map((food, index) => (
+                                {(foods.current as Array<import("./NutritionLabel").Food>).map((food, index) => (
                                 <div key={index}>
                                     <p className="text-2xl font-bold leading-none">Food: {food.food_name}</p>
                                     <div >
-                                        <NutritionLabel food={food}/>
+                                        <NutritionLabel food={food  }/>
                                     </div>
                                 </div>
                             ))}
@@ -105,10 +106,12 @@ export default function OverlayWrapper() {
             {showCapturedOverlay && capturedImage && (
                 <div className="absolute top-0 left-0 w-full h-full bg-white/30 backdrop-blur-sm flex items-center justify-center">
                     <div className="relative w-[90vw] h-[70vh]">
-                        <img
+                        <Image
                             src={capturedImage}
                             alt="Captured"
-                            className="object-contain rounded-lg shadow-lg w-full h-full"
+                            fill
+                            className="object-contain rounded-lg shadow-lg"
+                            sizes="(max-width: 768px) 90vw, 70vh"
                         />
                     </div>
                     <button
