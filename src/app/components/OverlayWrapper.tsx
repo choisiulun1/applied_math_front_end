@@ -89,7 +89,7 @@ export default function OverlayWrapper() {
                             <p>Loading...</p>
                         ) : (
                             <Carousel>
-                                {foods.current.map((food, index) => (
+                                {(foods.current as Array<{ food_name: string; [key: string]: any }>).map((food, index) => (
                                 <div key={index}>
                                     <p className="text-2xl font-bold leading-none">Food: {food.food_name}</p>
                                     <div >
